@@ -89,7 +89,11 @@ class TextEmbeddings:
         if not vectorstore:
             vectorstore = self.load_vectorstore_from_sqlite()
             if not vectorstore:
-                return None, "No indexed code found yet."
+                explanation = self.modelGeneration.generate_explanation(self.model, query)
+                return {
+                    "similarity_score": round(0, 2),
+                    "gemini_explanation": explanation
+                }, None
 
         query_embedding = self.embedding_model.embed_query(query)
 
