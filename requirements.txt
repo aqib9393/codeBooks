@@ -1,0 +1,9 @@
+pymongo 
+faiss-cpu
+google-generativeai
+python-dotenv
+langchain
+scikit-learn
+langchain-community
+langchain_google_genai
+flask
